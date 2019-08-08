@@ -32,6 +32,17 @@ export default function HomeScreen() {
         <View style={styles.getStartedContainer}>
             <Text style={styles.title}>República do Afeto</Text>
         </View>
+
+        <View style={styles.container}>
+        <Text style={styles.space}>
+          <Image style={styles.image} source={{uri: 'http://lorempixel.com/200/300/'}}/>
+          JAKDGHHSVBDKLASDHVJASBK
+        </Text>
+        <Text>
+          <Image style={styles.image} source={{uri: 'http://lorempixel.com/200/300/'}}/>
+             Line 2
+        </Text>
+      </View>
         
         <View style={styles.welcomeContainer}>
           <Image
@@ -161,6 +172,13 @@ const styles = StyleSheet.create({
   },
   codeHighlightText: {
     color: 'rgba(96,100,109, 0.8)',
+  },
+  image: {
+    width: 50,
+    height: 50,
+  },
+  space:{
+    marginStart:30,
   },
   codeHighlightContainer: {
     backgroundColor: 'rgba(0,0,0,0.05)',
