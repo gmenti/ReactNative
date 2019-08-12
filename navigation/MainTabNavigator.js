@@ -8,6 +8,14 @@ import LinksScreen from '../screens/LinksScreen';
 import LoginScreen from '../screens/Login';
 import TestScreen from '../screens/Test';
 import SettingsScreen from '../screens/SettingsScreen';
+import AnimatedTiming from '../screens/AnimatedTiming';
+import AnimatedTimingMultiple from '../screens/AnimatedTimingMultiple';
+import AnimatedSpring from '../screens/AnimatedSpring';
+import AnimatedParallel from '../screens/AnimatedParallel';
+import AnimatedSequence from '../screens/AnimatedSequence';
+import AnimatedStagger from '../screens/AnimatedStagger';
+import RotationAnimation from '../screens/RotatingAnimation';
+import Bouncing from '../screens/Bouncing';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -53,6 +61,7 @@ LinksStack.navigationOptions = {
 
 LinksStack.path = '';
 
+{/* This is how to make a navigation option on tabNavigator */}
 const LoginStack = createStackNavigator(
   {
     Login: LoginScreen,
@@ -71,7 +80,7 @@ LoginStack.path = '';
 
 const TestStack = createStackNavigator(
   {
-    Test: TestScreen
+    Test: Bouncing
   },
   config
 );
@@ -101,6 +110,7 @@ SettingsStack.navigationOptions = {
 
 SettingsStack.path = '';
 
+{/* Now we are placing the configured option in the tabNavigator */}
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LinksStack,

@@ -6,11 +6,42 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
+  Animated,
   View,
 } from 'react-native';
 
 import { MonoText } from '../components/StyledText';
+
+class FadeInView extends React.Component {
+  state = {
+    fadeAnim: new Animated.Value(0), // Initial value for opacity: 0
+  };
+
+  componentDidMount() {
+    Animated.timing(
+      // Animate over time
+      this.state.fadeAnim, // The animated value to drive
+      {
+        toValue: 1, // Animate to opacity: 1 (opaque)
+        duration: 10000, // Make it take a while
+      }
+    ).start(); // Starts the animation
+  }
+
+  render() {
+    let { fadeAnim } = this.state;
+
+    return (
+      <Animated.View // Special animatable View
+        style={{
+          ...this.props.style,
+          opacity: fadeAnim, // Bind opacity to animated value
+        }}>
+        {this.props.children}
+      </Animated.View>
+    );
+  }
+}
 
 export default function HomeScreen() {
   return (
@@ -28,6 +59,12 @@ export default function HomeScreen() {
             style={styles.welcomeImage}
           />
         </View> */}
+
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', margin: 20}}>
+        <FadeInView style={{ width: 250, height: 50, backgroundColor: 'powderblue' }}>
+          <Text style={{ fontSize: 28, textAlign: 'center', margin: 10 }}>Fading in</Text>
+        </FadeInView>
+      </View>
 
         <View style={styles.getStartedContainer}>
             <Text style={styles.title}>República do Afeto</Text>
