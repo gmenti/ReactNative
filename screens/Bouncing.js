@@ -158,7 +158,9 @@ BouncingPreloader.defaultProps = {
     "https://img.icons8.com/color/480/000000/kawaii-soda.png",
     "https://img.icons8.com/officel/480/000000/pineapple.png",
     "https://img.icons8.com/cotton/480/000000/taxi-speech-bubble.png",
-    "https://img.icons8.com/cotton/480/000000/uber-taxi.png"
+    "https://img.icons8.com/cotton/480/000000/uber-taxi.png",
+    "https://img.icons8.com/officel/480/000000/potato.png",
+    "https://img.icons8.com/nolan/64/000000/ruby-gemstone.png"
   ],
   leftRotation: "-680deg",
   rightRotation: "360deg",
